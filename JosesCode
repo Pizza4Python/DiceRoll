@@ -1,0 +1,26 @@
+import sys
+import random
+
+# random.seed(42)
+
+def roll_dice(sides, throws):
+	results = []
+	for throw in range(throws):
+		results.append(random.randint(0,sides))
+	return results
+
+
+def fetch_parameters():
+	sides = int(sys.argv[1])
+	throws = int(sys.argv[2])
+	return sides, throws
+
+
+def main():
+	faces, times = fetch_parameters()
+	scores = roll_dice(faces, times)
+	print(scores)
+
+
+if __name__ == '__main__':
+	main()
